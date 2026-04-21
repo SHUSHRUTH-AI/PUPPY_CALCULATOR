@@ -18,8 +18,40 @@
         justify-content: center;
         align-items: center;
         background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+        flex-direction: column;
     }
 
+    /* HEADER (PUPPY + NAME) */
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .puppy {
+        font-size: 3rem;
+        animation: floatPuppy 2s ease-in-out infinite;
+    }
+
+    @keyframes floatPuppy {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .name {
+        font-size: 1.8rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, #00c896, #00aaff, #ff9f43);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: glowText 2s infinite alternate;
+    }
+
+    @keyframes glowText {
+        from { text-shadow: 0 0 5px #00c896; }
+        to { text-shadow: 0 0 20px #ff9f43; }
+    }
+
+    /* CALCULATOR */
     .calculator {
         background: #222;
         padding: 20px;
@@ -100,6 +132,13 @@
 
 <body>
 
+<!-- 👇 ADD HERE (PUPPY + NAME) -->
+<div class="header">
+    <div class="puppy">🐶</div>
+    <h1 class="name">shushruth.k</h1>
+</div>
+
+<!-- CALCULATOR -->
 <div class="calculator">
     <div id="display" class="display">0</div>
 
