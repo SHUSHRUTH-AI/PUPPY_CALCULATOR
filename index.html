@@ -1,161 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Scientific Puppy Calculator</title>
-
-<style>
-body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-background:#1e1e2f;
-font-family:sans-serif;
-}
-
-/* 🐶 HEADER */
-.header{
-text-align:center;
-margin-bottom:10px;
-}
-
-.puppy{
-font-size:45px;
-animation:bounce 1.5s infinite ease-in-out;
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-12px) scale(1.1);}
-}
-
-/* CALCULATOR */
-.calculator{
-background:#222;
-padding:18px;
-border-radius:15px;
-width:380px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-.display{
-background:#111;
-color:white;
-padding:15px;
-font-size:22px;
-text-align:right;
-border-radius:10px;
-margin-bottom:10px;
-min-height:45px;
-overflow-x:auto;
-}
-
-.buttons{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:6px;
-}
-
-button{
-padding:12px;
-font-size:14px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-transition:0.2s;
-}
-
-button:hover{transform:scale(1.08);}
-
-.number{background:#2d2d44;color:white;}
-.operator{background:#ff9f43;color:white;}
-.func{background:#4a69bd;color:white;}
-.equal{background:#00c896;color:white;grid-column:span 2;}
-.clear{background:#ff4757;color:white;}
-</style>
+<title>Scientific Calculator (HTML Only)</title>
 </head>
 
 <body>
 
-<div class="header">
-<div class="puppy">🐶</div>
-<h3 style="color:white;margin:5px;">Scientific Puppy Calculator</h3>
-</div>
+<h2>🐶 Puppy Calculator</h2>
 
-<div class="calculator">
-<div id="display" class="display">0</div>
+<!-- DISPLAY -->
+<div>0</div>
 
-<div class="buttons">
+<!-- BUTTONS LAYOUT ONLY -->
 
-<!-- Row 1 -->
-<button class="clear" onclick="clr()">C</button>
-<button class="func" onclick="add('(')">(</button>
-<button class="func" onclick="add(')')">)</button>
-<button class="func" onclick="add('Math.PI')">π</button>
-<button class="func" onclick="add('Math.E')">e</button>
+<h3>Functions</h3>
+<button>sin</button>
+<button>cos</button>
+<button>tan</button>
+<button>log</button>
+<button>ln</button>
 
-<!-- Row 2 -->
-<button class="func" onclick="add('Math.sin(')">sin</button>
-<button class="func" onclick="add('Math.cos(')">cos</button>
-<button class="func" onclick="add('Math.tan(')">tan</button>
-<button class="func" onclick="add('Math.log10(')">log</button>
-<button class="func" onclick="add('Math.sqrt(')">√</button>
+<h3>Math Constants</h3>
+<button>π</button>
+<button>e</button>
+<button>(</button>
+<button>)</button>
 
-<!-- Row 3 -->
-<button class="number" onclick="add('7')">7</button>
-<button class="number" onclick="add('8')">8</button>
-<button class="number" onclick="add('9')">9</button>
-<button class="operator" onclick="add('/')">÷</button>
-<button class="func" onclick="add('**2')">x²</button>
+<h3>Numbers</h3>
+<button>7</button>
+<button>8</button>
+<button>9</button>
+<button>÷</button>
 
-<!-- Row 4 -->
-<button class="number" onclick="add('4')">4</button>
-<button class="number" onclick="add('5')">5</button>
-<button class="number" onclick="add('6')">6</button>
-<button class="operator" onclick="add('*')">×</button>
-<button class="func" onclick="add('**')">xʸ</button>
+<button>4</button>
+<button>5</button>
+<button>6</button>
+<button>×</button>
 
-<!-- Row 5 -->
-<button class="number" onclick="add('1')">1</button>
-<button class="number" onclick="add('2')">2</button>
-<button class="number" onclick="add('3')">3</button>
-<button class="operator" onclick="add('-')">−</button>
-<button class="func" onclick="add('Math.log(')">ln</button>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>−</button>
 
-<!-- Row 6 -->
-<button class="number" onclick="add('0')" style="grid-column:span 2;">0</button>
-<button class="number" onclick="add('.')">.</button>
-<button class="operator" onclick="add('+')">+</button>
-<button class="equal" onclick="calc()">=</button>
-
-</div>
-</div>
-
-<script>
-let display = document.getElementById("display");
-
-function add(val){
-if(display.innerText === "0"){
-display.innerText = val;
-}else{
-display.innerText += val;
-}
-}
-
-function clr(){
-display.innerText = "0";
-}
-
-function calc(){
-try{
-display.innerText = eval(display.innerText);
-}catch{
-display.innerText = "Error";
-}
-}
-</script>
+<button>0</button>
+<button>.</button>
+<button>=</button>
+<button>+</button>
 
 </body>
 </html>
