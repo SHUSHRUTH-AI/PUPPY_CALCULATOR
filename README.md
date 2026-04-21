@@ -1,1 +1,1 @@
-https://shushruth-ai.github.io/demo_website/
+https://shushruth-ai.github.io/PUPPY_CALCULATOR/
